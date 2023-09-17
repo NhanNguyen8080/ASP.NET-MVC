@@ -1,0 +1,15 @@
+﻿@model MVC01.Models.ProductModel
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="card bg-primary text-white">
+    <h1 class="card-header">Hello @Model.Name</h1>
+    <div class="card-body">
+        <p class="card-text">Price: @Model.Price</p>
+    </div>
+</div>
+
+@this.Path
