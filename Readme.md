@@ -1,17 +1,21 @@
-Import System.Runtime.InteropServices
+﻿## Controller
+- Là một lớp kế thừa lớp Controller : Microsoft.AspNetCore.Mvc.Controller
+- Action trong controller là một phương thức public (kh đc static)
+- Action trả về bất kỳ kiểu dữ liệu nào, thường là IActionResult
+- Các dịch vụ inject vào controller qua hàm tạo
+## View
+- Là file .cshtml
+- View cho Action lưu tại: /Views/ControllerName/ActionName.cshtml
+- Thêm thư mục lưu trữ View:
+```
+// {0} -> tên Action
+// {1} -> tên Controller
+// {2} -> tên Area 
+options.ViewLocationFormats.Add("/MyView/{1}/{0}" + RazorViewEngine.ViewExtension);
+```
 
-' In SDK-style projects such as this one, several assembly attributes that were historically
-' defined in this file are now automatically added during build and populated with
-' values defined in project properties. For details of which attributes are included
-' and how to customise this process see: https://aka.ms/assembly-info-properties
-
-
-' Setting ComVisible to false makes the types in this assembly not visible to COM
-' components.  If you need to access a type in this assembly from COM, set the ComVisible
-' attribute to true on that type.
-
-<Assembly: ComVisible(False)> 
-
-' The following GUID is for the ID of the typelib if this project is exposed to COM.
-
-<Assembly: Guid("52a56a54-159a-4718-9dd0-53345d42bcad")> 
+## Truyền dữ liệu sang View
+- Model
+- ViewData
+- ViewBag
+- TempData 
